@@ -1,17 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      This is  my first ionic app
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-content [fullscreen]="true">
+    <ion-row>
+      <ion-col>
+      <h1> Welcome {{req_username}}</h1>
+      <br/>
+      <ion-button (click)="this.global.loadToast()">
+        Click here to toast
+      </ion-button>
+    </ion-col>
+
+    </ion-row>
+
+
   <ion-button expand="full" (click)="updateMyValue()">Click me!</ion-button>
   {{myVariable}}
   <ion-button expand="full" (click)="updateMyValue2()">Message from CCT!</ion-button>
