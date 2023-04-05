@@ -14,7 +14,7 @@ export class HomePage {
   req_username:any;
   req_param:any;
   global:any;
-  data!: Observable<any>;
+  data: Observable<any> | undefined;
 
   constructor(
     public router:Router,
@@ -36,12 +36,13 @@ export class HomePage {
     }
 
     loadData(){
-      //let url = "https://regres.in/api/users?page=1";
-      let url = "https://regres.in/api/users?page=1";
+      let url = "https://reqres.in/api/users?page=1";
       this.data = this.http.get(url);
       this.data.subscribe(data=>{
         console.log("response",data);
       });
+      console.log("hello");
+
     }
 
     async getStorageData(){

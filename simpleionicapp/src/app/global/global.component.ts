@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./global.component.scss'],
 })
 export class GlobalComponent  implements OnInit {
-  globalvar="abcdefg"
+  globalvar="abcdefg";
 
   constructor() { }
 
