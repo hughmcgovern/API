@@ -12,20 +12,34 @@
       <!--<ion-button (click)="this.global.loadToast()">
         Click here to toast
       </ion-button> -->
+
       <ion-button (click)="loadData()">
         Load API Data
       </ion-button>
+
       <div>Total records: <span>{{total}}</span></div>
-    </ion-col>
-    <!-- <ion-item class="ion-no-padding" *ngFor="let item of data">
-    <ion-label>
-      {{item.first_name}}{{item.last_name}}
+      <div>Total pages: <span>{{total_pages}}</span></div>
 
-    </ion-label>
-  </ion-item> -->
+    <ion-grid *ngIf="!loaded">
+        <ion-item class="ion-no-padding" *ngFor="let item of response">
+          <ion-avatar slot="">
+              <img alt="Headshot" src="{{item.avatar}}">
+          </ion-avatar>
+          <ion-label>
+            {{item.first_name}}{{item.last_name}}<br/>
+            <small class="text-muted">{{item.email}}</small>
+            <small class="text-muted">{{item.id}}</small>
+          </ion-label>
+          <ion-label>Avatar Item</ion-label>
+        </ion-item>
+    </ion-grid>
 
+    this is outside the grid
+  
+      </ion-col>
     </ion-row>
-
+ 
+   
 
   <ion-button expand="full" (click)="updateMyValue()">Click me!</ion-button>
   {{myVariable}}

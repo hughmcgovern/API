@@ -16,6 +16,10 @@ export class HomePage {
   global:any;
   data: Observable<any> | undefined;
   total:any;
+  total_pages:any;
+  response: any;
+  loading: boolean | undefined;
+  loaded: boolean | undefined;
 
   constructor(
     public router:Router,
@@ -37,14 +41,27 @@ export class HomePage {
     }
 
     loadData(){
+      this.loaded = true;
+      this.loading = false;
+
       let url = "https://reqres.in/api/users?page=1";
       this.data = this.http.get(url);
       this.data.subscribe(data=>{
         console.log("response",data);
         this.total = data.total;
-        console.log(this.total);
+        this.total_pages = data.total_pages;
+        console.log("total records:",this.total);
+        console.log("total pages:",this.total_pages);
+
+        // putting in some delay here
+        setTimeout(()=>{
+          this.loaded=true;
+          this.loading=false;
+        },1000);
+
+
       });
-      console.log("hello from the data");
+      console.log("hello from the home.page.ts and data");
       
       
 
