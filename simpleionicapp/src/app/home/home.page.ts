@@ -15,6 +15,7 @@ export class HomePage {
   req_param:any;
   global:any;
   data: Observable<any> | undefined;
+  total:any;
 
   constructor(
     public router:Router,
@@ -40,8 +41,12 @@ export class HomePage {
       this.data = this.http.get(url);
       this.data.subscribe(data=>{
         console.log("response",data);
+        this.total = data.total;
+        console.log(this.total);
       });
       console.log("hello from the data");
+      
+      
 
     }
 

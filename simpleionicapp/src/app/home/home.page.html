@@ -13,9 +13,16 @@
         Click here to toast
       </ion-button> -->
       <ion-button (click)="loadData()">
-        Click here to toast
+        Load API Data
       </ion-button>
+      <div>Total records: <span>{{total}}</span></div>
     </ion-col>
+    <!-- <ion-item class="ion-no-padding" *ngFor="let item of data">
+    <ion-label>
+      {{item.first_name}}{{item.last_name}}
+
+    </ion-label>
+  </ion-item> -->
 
     </ion-row>
 
