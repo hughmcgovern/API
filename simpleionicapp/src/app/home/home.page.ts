@@ -17,7 +17,7 @@ export class HomePage {
   data: Observable<any> | undefined;
   total:any;
   total_pages:any;
-  response: any;
+  response: any[] | undefined;
   loading: boolean | undefined;
   loaded: boolean | undefined;
 
