@@ -7,6 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { GlobalComponent } from '../global/global.component';
 
+import {HttpClient} from '@angular/common/http';
 
 @NgModule({
   imports: [

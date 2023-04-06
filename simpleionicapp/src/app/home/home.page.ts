@@ -41,7 +41,7 @@ export class HomePage {
       this.data.subscribe(data=>{
         console.log("response",data);
       });
-      console.log("hello");
+      console.log("hello from the data");
 
     }
 
