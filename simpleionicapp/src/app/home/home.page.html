@@ -26,7 +26,11 @@
     </tr>
     <div>
       First name:{{record}}
+      <br/>
       Last name:{{record2}}
+      <br/>
+      Avatar:<img alt="Headshot" src="{{avatar}}">
+      <br/>
     </div>
     <ion-grid *ngIf="loaded">
         <ion-item class="ion-no-padding" *ngFor="let item in data; let i = index;">

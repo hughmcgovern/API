@@ -22,6 +22,7 @@ export class HomePage {
   loaded: boolean | undefined;
   record:any;
   record2:any;
+  avatar:any;
 
   constructor(
     public router:Router,
@@ -54,6 +55,7 @@ export class HomePage {
         this.total_pages = data.total_pages;
         this.record = data.data[0].first_name;
         this.record2 = data.data[0].last_name;
+        this.avatar = data.data[0].avatar;
         console.log("total records:",this.total);
         console.log("total pages:",this.total_pages);
         console.log("this record:",this.record);
