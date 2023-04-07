@@ -79,7 +79,7 @@ export class HomePage {
     loadData2(){
       
       this.counter = this.counter +1;
-      if(this.counter >=5){this.counter=0;}
+      if(this.counter >=6){this.counter=0;}
       console.log("Counter:",this.counter);
 
       let url = "https://reqres.in/api/users?page=1";
