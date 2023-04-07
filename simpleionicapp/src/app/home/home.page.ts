@@ -23,6 +23,7 @@ export class HomePage {
   record:any;
   record2:any;
   avatar:any;
+  counter: any;
 
   constructor(
     public router:Router,
@@ -31,6 +32,7 @@ export class HomePage {
     public http:HttpClient) 
     {
       this.global = this.globalComponent;
+      this.counter = 0;
     }
 
     myVariable: string ="The force is with me!";
@@ -74,6 +76,23 @@ export class HomePage {
       
 
     }
+    loadData2(){
+      
+      this.counter = this.counter +1;
+      if(this.counter >=5){this.counter=0;}
+      console.log("Counter:",this.counter);
+
+      let url = "https://reqres.in/api/users?page=1";
+      this.data = this.http.get(url);
+      this.data.subscribe(data=>{
+        console.log("response",data);
+        this.record = data.data[this.counter].first_name;
+        this.record2 = data.data[this.counter].last_name;
+        this.avatar = data.data[this.counter].avatar;
+      });     
+      
+
+    }
 
     async getStorageData(){
       let storage_username = await this.storage.get("username");
@@ -90,4 +109,4 @@ export class HomePage {
       // with storage
       this.getStorageData();
     }
-}
+  }

@@ -17,6 +17,10 @@
         Load API Data
       </ion-button>
 
+      <ion-button (click)="loadData2()">
+        Next Record
+      </ion-button>
+
       <div>Total records: <span>{{total}}</span></div>
       <div>Total pages: <span>{{total_pages}}</span></div>
 
@@ -35,7 +39,7 @@
       <br/>
     </div>
     <ion-grid *ngIf="loaded">
-        <ion-item class="ion-no-padding" *ngFor="let item in data; let i = index;">
+        <ion-item class="ion-no-padding" *ngFor="let item in data.data; let i = index;">
           <ion-avatar slot="">
               <img alt="Headshot" src="{{item.avatar}}">
           </ion-avatar>
