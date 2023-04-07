@@ -20,6 +20,8 @@ export class HomePage {
   response: any[] | undefined;
   loading: boolean | undefined;
   loaded: boolean | undefined;
+  record:any;
+  record2:any;
 
   constructor(
     public router:Router,
@@ -50,8 +52,12 @@ export class HomePage {
         console.log("response",data);
         this.total = data.total;
         this.total_pages = data.total_pages;
+        this.record = data.data[0].first_name;
+        this.record2 = data.data[0].last_name;
         console.log("total records:",this.total);
         console.log("total pages:",this.total_pages);
+        console.log("this record:",this.record);
+        console.log("this record:",this.record2);
 
         // putting in some delay here
         setTimeout(()=>{

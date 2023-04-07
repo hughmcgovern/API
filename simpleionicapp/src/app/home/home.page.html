@@ -19,10 +19,15 @@
 
       <div>Total records: <span>{{total}}</span></div>
       <div>Total pages: <span>{{total_pages}}</span></div>
+
       <tr *ngFor="let item of response; let i = index">
         <td>{{item.first_name}}</td>
         <td>{{i}}</td>
     </tr>
+    <div>
+      First name:{{record}}
+      Last name:{{record2}}
+    </div>
     <ion-grid *ngIf="loaded">
         <ion-item class="ion-no-padding" *ngFor="let item of response; let i = index;">
           <ion-avatar slot="">
