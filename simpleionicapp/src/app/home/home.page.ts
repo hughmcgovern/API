@@ -23,6 +23,7 @@ export class HomePage {
   record:any;
   record2:any;
   avatar:any;
+  email: any;
   counter: any;
 
   constructor(
@@ -57,6 +58,7 @@ export class HomePage {
         this.total_pages = data.total_pages;
         this.record = data.data[0].first_name;
         this.record2 = data.data[0].last_name;
+        this.email = data.data[0].email;
         this.avatar = data.data[0].avatar;
         console.log("total records:",this.total);
         console.log("total pages:",this.total_pages);
@@ -89,6 +91,7 @@ export class HomePage {
         this.record = data.data[this.counter].first_name;
         this.record2 = data.data[this.counter].last_name;
         this.avatar = data.data[this.counter].avatar;
+        this.email = data.data[this.counter].email;
       });     
       
 
